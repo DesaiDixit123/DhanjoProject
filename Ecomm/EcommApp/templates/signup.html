@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="p-4 m-4">
+        
+        <div class="col-lg-5 rounded mx-auto border pt-4 signupForm pb-4">
+
+            <div class=" text-center">
+                <div class="display-8" style="font-family: arial">
+                    <b>Create An Account</b>
+                </div>
+                <hr>
+            </div>
+
+            <h3 hidden class="alert alert-light border rounded">Create An Account</h3>
+          
+            <form action="/signup" method="POST" enctype="multipart/form-data">
+
+              {% csrf_token %}
+
+
+              {% if error%}
+              <div class="alert alert-danger" role="alert">
+                  {{error}}
+              </div>
+              {% endif %}
+                <!-- Profile Image Preview with Click Event -->
+                <div class="form-group text-center">
+                    <img id="profileImagePreview" src="https://via.placeholder.com/150" alt="Profile Image" class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 2px solid #ddd; cursor: pointer;" onclick="document.getElementById('profileImage').click();">
+                </div>
+
+                <!-- Hidden Image Upload Field -->
+                <div class="form-group">
+                    <input type="file" class="form-control" id="profileImage" accept="image/*" style="display: none;" onchange="previewImage(event)" name="profileImg">
+                </div>
+
+                <!-- Other Form Fields -->
+                <div class="form-group">
+                    <label for="fname">First Name :</label>
+                    <input type="text" class="form-control" id="fname" name="fname">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name :</label>
+                    <input type="text" class="form-control"  id="lname" name="lname">
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone :</label>
+                    <input type="text" class="form-control"  id="phone" name="phone">
+                   
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" class="form-control"  id="email" aria-describedby="emailHelp" name="email">
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                  </div>
+                 
+
+
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form> 
+        </div>
+    </div>
+  
+</div>
+
+
+{% endblock %}

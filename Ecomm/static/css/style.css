@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: #6DABA7;
+  logo{
+    font-size: 25px !important;
+
+  }
+}
+
+.demo{
+    padding-top:50px;
+}
+
+.signupForm{
+   border-radius: 8px;
+   box-shadow: 5px 10px 0px 30px #6DABA7;
+}
+
+.text-size{
+  font-size: 14px !important;
+}
+
+/* 
+.footer{
+  background-color: #6DABA7;
+  width: 100%;
+  height: 50vh;
+
+} */
